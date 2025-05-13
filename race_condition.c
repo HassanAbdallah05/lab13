@@ -4,8 +4,8 @@
 
 int main() {
     int count = 0;
-    
-    #pragma omp parallel for
+
+    #pragma omp parallel for reduction(+:count) 
     for (int i = 0; i < 1000000; i++) {
         count++;
     }
